@@ -11,6 +11,7 @@ import upload from './middleware/multer.middleware.js'
 
 import path from 'path'
 const app = express()
+const PORT = process.env.PORT || 5001
 dotenv.config()
 app.use(express.json())
 app.use(cookieParser())
@@ -18,7 +19,7 @@ app.use("/bikeImages" , express.static(path.join(process.cwd() , "./bikeImages")
 app.use(cors({origin : 'http://localhost:3000' , credentials : true}))
 app.use("/api/auth" , authRoute)
 app.use("/api/auth/bikes" , bikeRoute)
-app.listen(5001 ,async ()=>{
+app.listen( PORT , async ()=>{
       await  connectDB()
     console.log("The Server Started at " , 5001);
 })
