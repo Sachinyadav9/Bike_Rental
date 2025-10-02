@@ -18,7 +18,7 @@ app.use("/bikeImages" , express.static(path.join(process.cwd() , "./bikeImages")
 app.use(cors({origin : 'http://localhost:3000' , credentials : true}))
 app.use("/api/auth" , authRoute)
 app.use("/api/auth/bikes" , bikeRoute)
-app.listen(5001 , ()=>{
-    connectDB()
+app.listen(5001 ,async ()=>{
+      await  connectDB()
     console.log("The Server Started at " , 5001);
 })

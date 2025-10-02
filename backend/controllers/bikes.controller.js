@@ -4,6 +4,7 @@ import User from "../models/user.model.js"
 import { Rental } from "../models/Rental.model.js"
 
 import cloudinary from "../lib/cloudinary.js"
+import { connectDB } from "../lib/db.js"
 
 export const addBikes = async(req , res)=>{
     try{
@@ -43,10 +44,14 @@ export const deleteBike = async(req , res)=>{
 
 export const getBike = async(req , res )=>{
     try {
+      console.log("The Bike ID is " , req.params.id)
+      const token = req.cookies.jwt;
+      console.log("The Token in getBike is " , token)
         const bikeId = req.params.id;
-       
-        const bike = await Bikes.findById({_id : bikeId});
-       
+
+     const bike = await Bikes.findOne({_id : bikeId}) //.select("-_id");
+
+       console.log("The Bike is " , bike._id)
         res.json(bike);
 
     } catch (error) {

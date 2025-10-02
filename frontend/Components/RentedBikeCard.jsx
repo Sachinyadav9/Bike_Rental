@@ -1,4 +1,3 @@
-// components/BikeCard.jsx
 import { Link } from "react-router-dom";
 
 export default function BikeCard({ rental }) {

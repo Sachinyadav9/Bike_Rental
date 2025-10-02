@@ -1,17 +1,3 @@
-// import { useNavigate } from "react-router-dom"
-// import { Button } from "../src/components/ui/button"
-
-// export const HomePage = () => {
-//   const navigate = useNavigate()
-//   return (
-//  <div  className="bg-red-500 bottom-0 right-0 fixed z-0 h-[90%] w-full">
-// <img src="bike.png" alt="" className="h-full w-full object-stretch ml-0.5 mt-1" />
-// <Button className="absolute bottom-[10%] left-[45%] px-8 " varient="outline" onClick={()=>navigate("/bikes")}>Bike Showcase</Button>
-//   </div>
-//   )
-// }
-
-
 import React, { useEffect, useState } from "react";
 import { Bike } from "lucide-react";
 import axiosInstance from "../axios/axios";
@@ -28,7 +14,7 @@ export const Home = () => {
     const fetchBikes = async () => {
       try {
         const res = await axiosInstance.get("/bikes/getallbikes");
-        console.log(res.data)
+       
         setBikes(res.data || []);
        
       } catch (err) {

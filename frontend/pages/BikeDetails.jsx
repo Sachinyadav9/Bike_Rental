@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axiosInstance from "../axios/axios";
 
 export const BikeDetailPage = () => {
-  const { id } = useParams(); // bike id from route
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
   const [bike, setBike] = useState(null);

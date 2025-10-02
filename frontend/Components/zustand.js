@@ -37,6 +37,7 @@ const useAuth = create((set)=>
         const res = await axiosInstance.post("/login" , {email , password},  {withCredentials : true})
        console.log(res.data)
         set({user : res?.data?.user._id|| null })
+       
         
         return res
 

@@ -1,69 +1,8 @@
-
-
 import { useParams } from "react-router-dom";
 import axiosInstance from "../axios/axios.js";
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { motion } from "framer-motion";
-
-
-// export default function RentedBikeDetails() {
-//   const { bikeId } = useParams(); // rentalId
-//   const [rental, setRental] = useState(null);
-
-//   useEffect(() => {
-//     const fetchRental = async () => {
-//       try {
-//         const res = await axiosInstance.get(`bikes/rental/${bikeId}`, {
-//           withCredentials: true,
-//         });
-//         console.log("This is the RenalBikeDetails",res.data.rental)
-//         setRental(res.data.rental);
-//       } catch (err) {
-//         console.error("Error fetching rental details", err);
-//       }
-//     };
-//     fetchRental();
-//   }, [bikeId]);
-
-//   if (!rental) return <p>Loading...</p>;
-
-//   const { bike, startDate, endDate, totalPrice, status } = rental;
-
-//   return (
-//     <div className="p-6 max-w-3xl mx-auto">
-//       <img
-//         src={bike?.Image?.[0] || "/placeholder.png"}
-//         alt={bike?.name}
-//         className="w-full h-64 object-cover rounded-md mb-4"
-//       />
-//       <h1 className="text-2xl font-bold mb-2">{bike?.name}</h1>
-//       <p className="text-gray-600 mb-2">₹{bike?.price} / day</p>
-//       <p>Start Date: {new Date(startDate).toLocaleString()}</p>
-//       <p>
-//         End Date:{" "}
-//         {endDate ? new Date(endDate).toLocaleString() : "Still Active"}
-//       </p>
-//       <p>Status: {status}</p>
-//       {totalPrice && <p>Total Price: ₹{totalPrice}</p>}
-
-//       {status === "active" && (
-//         <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded">
-//           Return Bike
-//         </button>
-//       )}
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
 export  default function RentedBikeDetails( )  {
   
   const { bikeId } = useParams();
