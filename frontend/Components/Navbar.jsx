@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-lg w-full fixed top-0 left-0 z-50">
       <div className="flex items-center justify-between px-4 py-3 md:px-6">
-        {/* Logo */}
+     
         <div className="flex items-center gap-2">
           <Bike
             size={40}
@@ -33,7 +33,7 @@ const Navbar = () => {
           </span>
         </div>
 
-        {/* Desktop Links */}
+       
         <div className="hidden md:flex items-center gap-6 uppercase font-bold text-black">
           <NavLink to="/" className={({ isActive }) => isActive ? "text-yellow-400" : ""}>Home</NavLink>
           <NavLink to="/bikes" className={({ isActive }) => isActive ? "text-yellow-400" : ""}>Bikes</NavLink>
@@ -41,7 +41,7 @@ const Navbar = () => {
           {admin && <NavLink to="/addbike" className={({ isActive }) => isActive ? "text-yellow-400" : ""}>Add Bikes</NavLink>}
         </div>
 
-        {/* Auth Section Desktop */}
+      
         <div className="hidden md:flex items-center gap-3">
           {!user ? (
             <>
@@ -71,7 +71,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Button */}
+       
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+    
       {menuOpen && (
         <div className="md:hidden px-4 pt-2 pb-4 space-y-2 bg-white shadow-md">
           <NavLink to="/" onClick={toggleMenu} className="block">Home</NavLink>
